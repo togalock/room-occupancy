@@ -1,0 +1,23 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "Users" (
+	"UID"	TEXT,
+	"Name"	TEXT,
+	"Phone"	INTEGER,
+	PRIMARY KEY("UID")
+);
+CREATE TABLE IF NOT EXISTS "TrackedDevices" (
+	"MAC"	TEXT,
+	"Name"	TEXT,
+	"UID"	TEXT
+);
+CREATE TABLE IF NOT EXISTS "DeviceLog" (
+	"MAC"	TEXT,
+	"DeviceName"	TEXT,
+	"StartTime"	INTEGER,
+	"CloseTime"	INTEGER
+);
+CREATE TABLE IF NOT EXISTS "UserDevices" (
+	"UID"	TEXT,
+	"MAC"	TEXT
+);
+COMMIT;

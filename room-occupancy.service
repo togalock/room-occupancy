@@ -1,0 +1,11 @@
+[Unit]
+Description=Room Occupancy Punchcard Service
+After=network-online.target
+
+[Service]
+Type=Simple
+ExecStart=/usr/bin/python3 ${SERVICE_DIR}
+WorkingDirectory=${WORKING_DIR}
+
+[Install]
+WantedBy=multi-user.target
